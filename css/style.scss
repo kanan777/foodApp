@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-$base-font : 'Inter', sans-serif;
+$base-font : 'Inter',
+sans-serif;
 
-body{
+body {
     font-family: $base-font;
     height: 100vh;
 }
@@ -40,34 +41,36 @@ h6 {
     --onBoard-title: #1F2937;
     --onBoardtext: #4B5563;
     --bgColor: #E5E5E5;
+    --mainGreen: #32B768;
+    --buttontextGreen: #10B981;
+    --lightGreen: #D1FAE5;
+    --white: #fff;
+    --termsBlack: #242323;
+    --disableLogin: #89909E;
+    --disableColor: #F4F4F4;
+    --inputBorder: #BEC5D1;
+    --black222: #222;
+    --disableText: #9CA3AF;
 }
 
-@mixin display-center{
+@mixin display-center {
     display: flex;
     align-items: center;
     justify-content: center;
-} 
-
-
+}
 
 ////////////////
 /// onBoard-pages
 /////////////////
 
-
-.onBoard-cover{
+.onBoard-cover,
+.register-cover {
     @include display-center();
     flex-direction: column;
-    background-color: red;
     height: 100%;
 }
 
-.first-onboard__img{
-    @include display-center();
-    margin-bottom: 80px;
-}
-
-.main-title{
+.main-title {
     color: var(--onBoard-title);
     font-weight: 600;
     font-size: 24px;
@@ -76,7 +79,7 @@ h6 {
     margin-bottom: 16px;
 }
 
-.onboard-text{
+.onboard-text {
     font-weight: 400;
     font-size: 12px;
     line-height: 15px;
@@ -85,12 +88,12 @@ h6 {
     margin: 0px auto;
 }
 
-.onBoard__footer{
+.onBoard__footer {
     @include display-center();
     justify-content: space-around;
     margin-top: -104px;
 
-    a{
+    a {
         text-decoration: none;
         color: var(--onBoardtext);
         font-weight: 400;
@@ -99,15 +102,224 @@ h6 {
     }
 }
 
-.second-onboard__img{
+.first-onboard__img {
+    @include display-center();
+    margin-bottom: 80px;
+}
+
+.second-onboard__img {
     @include display-center();
     margin-bottom: 16px;
 }
 
-.third-onboard__img{
+.third-onboard__img {
+    @include display-center();
     margin-bottom: 70px;
 }
 
-.third-link{
+.third-link {
     visibility: hidden;
+}
+
+//////////////////////////////
+/// REGISTER PAGES START
+/// /////////////////////////
+
+.register-cover {
+    .register__img {
+        margin-bottom: 56px;
+    }
+
+    .main-title {
+        margin-bottom: 8px;
+    }
+
+    .onboard-text {
+        margin-bottom: 96px;
+    }
+
+    .terms-conditions {
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 12px;
+        color: var(--termsBlack);
+        width: 320px;
+        margin-top: 16px;
+
+        a {
+            color: var(--mainGreen);
+            text-decoration: none;
+        }
+    }
+}
+
+@mixin button-details {
+    @include display-center();
+    padding: 16px 64px;
+    border-radius: 12px;
+    min-width: 256px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: none;
+}
+
+
+body {
+    background-color: red;
+}
+
+.join__buttons {
+    @include display-center();
+    flex-direction: column;
+    gap: 16px;
+
+    .register-link {
+        @include button-details();
+        background-color: var(--mainGreen);
+        color: var(--white);
+        outline: 0;
+        border: 0;
+    }
+
+    .login-link {
+        @include button-details();
+        background-color: var(--lightGreen);
+        color: var(--buttontextGreen);
+    }
+}
+
+.register-box {
+    border-radius: 36px 36px 0px 0px;
+    width: 375px;
+    height: 586px;
+    margin: 0px auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 236px;
+    background-color: var(--white);
+
+    .join-line {
+        padding-top: 24px;
+    }
+
+    .join {
+        @include display-center();
+        justify-content: space-between;
+        width: 238px;
+        text-align: left;
+        margin-top: 40px;
+        margin-left: -48px;
+
+        .join-text {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 19px;
+            color: var(--disableLogin);
+        }
+
+
+        @mixin join-line {
+            border: 1px solid var(--mainGreen);
+            margin: 12px auto;
+            margin-bottom: 0px;
+            display: none;
+        }
+
+        .line {
+            width: 77px;
+            height: 0px;
+            @include join-line();
+        }
+
+        .login-line {
+            @include join-line();
+            width: 28px;
+            height: 0px;
+        }
+
+        // .join-text:focus .line {
+        //     display: block;
+        // }
+
+        // .join-text:focus {
+        //     color: var(--mainGreen);
+        // }
+
+        .custom-focus{
+            color: var(--mainGreen);
+            .line{
+                display: block;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .register-link {
+        padding: 16px 30px;
+        position: relative;
+
+        .google-icon {
+            display: inline-block;
+            margin-right: 24px;
+        }
+    }
+
+    .disable__button {
+        background-color: var(--disableColor);
+        color: var(--black222);
+    }
+
+    .disable-text {
+        color: var(--disableText);
+    }
+
+    .custom-line::before {
+        content: '';
+        position: absolute;
+        display: block;
+        border: 0.5px solid #D2D4D8;
+        width: 148px;
+        height: 0px;
+        top: 48px;
+        margin-top: 8px;
+    }
+
+}
+
+.register-form {
+    padding: 36px 24px;
+
+    label {
+        span {
+            display: block;
+            margin-bottom: 0px;
+            font-size: 14px;
+        }
+    }
+
+    input {
+        border: 1px solid var(--inputBorder);
+        border-radius: 12px;
+        width: 100%;
+        height: 48px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 36px;
+        padding: 6px 12px;
+        margin-bottom: 8px;
+        outline-color: var(--mainGreen);
+    }
+}
+
+.registration-page__content{
+    .register-form{
+        span{
+            color: var(--disableText);
+        }
+    }
 }

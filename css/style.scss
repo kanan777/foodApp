@@ -51,6 +51,8 @@ h6 {
     --inputBorder: #BEC5D1;
     --black222: #222;
     --disableText: #9CA3AF;
+    --forgetTitle: #374151;
+    --color82 : #828282;
 }
 
 @mixin display-center {
@@ -64,7 +66,9 @@ h6 {
 /////////////////
 
 .onBoard-cover,
-.register-cover {
+.register-cover,
+.forget-cover,
+.back-email-cover {
     @include display-center();
     flex-direction: column;
     height: 100%;
@@ -121,6 +125,10 @@ h6 {
     visibility: hidden;
 }
 
+.forget-cover {
+    padding-right: 24px;
+}
+
 //////////////////////////////
 /// REGISTER PAGES START
 /// /////////////////////////
@@ -164,23 +172,10 @@ h6 {
     text-decoration: none;
 }
 
-
-body {
-    background-color: red;
-}
-
 .join__buttons {
     @include display-center();
     flex-direction: column;
     gap: 16px;
-
-    .register-link {
-        @include button-details();
-        background-color: var(--mainGreen);
-        color: var(--white);
-        outline: 0;
-        border: 0;
-    }
 
     .login-link {
         @include button-details();
@@ -189,10 +184,24 @@ body {
     }
 }
 
+.register-link {
+    @include button-details();
+    background-color: var(--mainGreen);
+    color: var(--white);
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+}
+
+.register-link:hover {
+    opacity: .85;
+}
+
+
 .register-box {
     border-radius: 36px 36px 0px 0px;
     width: 375px;
-    height: 586px;
+    height: 594px;
     margin: 0px auto;
     display: flex;
     align-items: center;
@@ -247,9 +256,10 @@ body {
         //     color: var(--mainGreen);
         // }
 
-        .custom-focus{
+        .custom-focus {
             color: var(--mainGreen);
-            .line{
+
+            .line {
                 display: block;
             }
         }
@@ -316,10 +326,151 @@ body {
     }
 }
 
-.registration-page__content{
-    .register-form{
-        span{
+.registration-page__content {
+    .register-form {
+        input:focus span {
             color: var(--disableText);
         }
+    }
+}
+
+//////////////////////////////
+/// LOGIN PAGE STARTS////////////
+/// //////////////////////////
+
+.login-box {
+    height: 570px;
+}
+
+.forgot-pass {
+    margin-top: -44px;
+    margin-bottom: 18px;
+    margin-left: 108px;
+
+    .main-title {
+        color: var(--mainGreen);
+        font-size: 14px;
+        text-decoration: none;
+    }
+}
+
+/////////////////////////////
+/// FORGET PASSWORD STARTS/////
+/// ////////////////////////////////
+
+.forget-cover {
+    padding-left: 24px;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    .forget-content {
+        margin-top: 116px;
+        margin-bottom: 60px;
+    }
+
+    .forget-title {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 36px;
+        text-align: left;
+        color: var(--forgetTitle);
+    }
+
+    .forget-text {
+        color: var(--disableText);
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 21px;
+        text-align: left;
+    }
+
+    .register-form {
+        padding: 0px;
+
+        .main-title {
+            margin-left: 10px;
+        }
+
+        input {
+            width: 327px;
+        }
+    }
+
+    .submit__button {
+        padding-left: 36px;
+
+        .register-link {
+            margin-top: 344px;
+        }
+    }
+
+    .forgot-pass {
+        margin: 0px;
+        margin-left: 12px;
+
+        .main-title {
+            color: var(--disableText);
+
+            span {
+                color: var(--mainGreen);
+            }
+        }
+    }
+}
+
+.back-email-cover {
+    @include display-center();
+    justify-content: flex-end;
+    padding-left: 46px;
+    padding-right: 46px;
+
+    .forget-content {
+        margin-top: -10px;
+        margin-bottom: 28px;
+
+        .forget-title {
+            margin-bottom: 8px;
+        }
+    }
+
+    .submit__button {
+        padding: 140px 36px 70px 36px;
+
+        .register-link {
+            margin-top: 0px;
+        }
+    }
+
+    .forgot-pass {
+        .main-title {
+            color: #6B7280;
+            font-weight: 700;
+        }
+    }
+}
+
+.pass-cover {
+    .forget-text{
+        font-size: 14px;
+    }
+    .submit__button {
+        padding: 290px 36px 70px 36px;
+
+        .register-link {
+            margin-top: 0px;
+        }
+    }
+}
+
+.success-cover{
+    .forget-title{
+        margin-bottom: 0px !important;
+    }
+
+    .forget-text{
+        color: var(--color82);
+        font-size: 14px;
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }

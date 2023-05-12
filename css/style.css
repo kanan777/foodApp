@@ -47,10 +47,14 @@ h6 {
   --inputBorder: #BEC5D1;
   --black222: #222;
   --disableText: #9CA3AF;
+  --forgetTitle: #374151;
+  --color82: #828282;
 }
 
 .onBoard-cover,
-.register-cover {
+.register-cover,
+.forget-cover,
+.back-email-cover {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -116,6 +120,10 @@ h6 {
   visibility: hidden;
 }
 
+.forget-cover {
+  padding-right: 24px;
+}
+
 .register-cover .register__img {
   margin-bottom: 56px;
 }
@@ -138,32 +146,12 @@ h6 {
   text-decoration: none;
 }
 
-body {
-  background-color: red;
-}
-
 .join__buttons {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 16px;
-}
-.join__buttons .register-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px 64px;
-  border-radius: 12px;
-  min-width: 256px;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 17px;
-  text-decoration: none;
-  background-color: var(--mainGreen);
-  color: var(--white);
-  outline: 0;
-  border: 0;
 }
 .join__buttons .login-link {
   display: flex;
@@ -180,10 +168,32 @@ body {
   color: var(--buttontextGreen);
 }
 
+.register-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 64px;
+  border-radius: 12px;
+  min-width: 256px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-decoration: none;
+  background-color: var(--mainGreen);
+  color: var(--white);
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.register-link:hover {
+  opacity: 0.85;
+}
+
 .register-box {
   border-radius: 36px 36px 0px 0px;
   width: 375px;
-  height: 586px;
+  height: 594px;
   margin: 0px auto;
   display: flex;
   align-items: center;
@@ -282,6 +292,116 @@ body {
   outline-color: var(--mainGreen);
 }
 
-.registration-page__content .register-form span {
+.registration-page__content .register-form input:focus span {
   color: var(--disableText);
+}
+
+.login-box {
+  height: 570px;
+}
+
+.forgot-pass {
+  margin-top: -44px;
+  margin-bottom: 18px;
+  margin-left: 108px;
+}
+.forgot-pass .main-title {
+  color: var(--mainGreen);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.forget-cover {
+  padding-left: 24px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.forget-cover .forget-content {
+  margin-top: 116px;
+  margin-bottom: 60px;
+}
+.forget-cover .forget-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 36px;
+  text-align: left;
+  color: var(--forgetTitle);
+}
+.forget-cover .forget-text {
+  color: var(--disableText);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  text-align: left;
+}
+.forget-cover .register-form {
+  padding: 0px;
+}
+.forget-cover .register-form .main-title {
+  margin-left: 10px;
+}
+.forget-cover .register-form input {
+  width: 327px;
+}
+.forget-cover .submit__button {
+  padding-left: 36px;
+}
+.forget-cover .submit__button .register-link {
+  margin-top: 344px;
+}
+.forget-cover .forgot-pass {
+  margin: 0px;
+  margin-left: 12px;
+}
+.forget-cover .forgot-pass .main-title {
+  color: var(--disableText);
+}
+.forget-cover .forgot-pass .main-title span {
+  color: var(--mainGreen);
+}
+
+.back-email-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: flex-end;
+  padding-left: 46px;
+  padding-right: 46px;
+}
+.back-email-cover .forget-content {
+  margin-top: -10px;
+  margin-bottom: 28px;
+}
+.back-email-cover .forget-content .forget-title {
+  margin-bottom: 8px;
+}
+.back-email-cover .submit__button {
+  padding: 140px 36px 70px 36px;
+}
+.back-email-cover .submit__button .register-link {
+  margin-top: 0px;
+}
+.back-email-cover .forgot-pass .main-title {
+  color: #6B7280;
+  font-weight: 700;
+}
+
+.pass-cover .forget-text {
+  font-size: 14px;
+}
+.pass-cover .submit__button {
+  padding: 290px 36px 70px 36px;
+}
+.pass-cover .submit__button .register-link {
+  margin-top: 0px;
+}
+
+.success-cover .forget-title {
+  margin-bottom: 0px !important;
+}
+.success-cover .forget-text {
+  color: var(--color82);
+  font-size: 14px;
+  padding-left: 30px;
+  padding-right: 30px;
 }/*# sourceMappingURL=style.css.map */
